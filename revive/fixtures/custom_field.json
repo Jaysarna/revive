@@ -1,0 +1,24 @@
+[
+	{
+		"doctype": "Custom Field",
+		"name": "Project-allowed_users",
+		"dt": "Project",
+		"label": "Allowed Users",
+		"fieldname": "allowed_users",
+		"fieldtype": "Table MultiSelect",
+		"options": "Revive Access Member",
+		"insert_after": "notes",
+		"module": "Revive"
+	},
+	{
+		"doctype": "Custom Field",
+		"name": "Task-allowed_users",
+		"dt": "Task",
+		"label": "Allowed Users",
+		"fieldname": "allowed_users",
+		"fieldtype": "Table MultiSelect",
+		"options": "Revive Access Member",
+		"insert_after": "description",
+		"module": "Revive"
+	}
+]

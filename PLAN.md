@@ -20,6 +20,7 @@ The ERPNext instance is hosted at: `https://revive.m.frappe.cloud`
 | 2 | Document Print Format Templates | Sales Docs | Pending |
 | 2A | Project-Based Custom Quotation Templates | Sales / Projects | Pending — details TBD |
 | 3 | Role-Based Permissions & Security | Security | Pending |
+| 3A | Project & Task Row-Level Permissions (allowed_users field + permission query) | Security | **In Progress** |
 | 4 | Lead Module Enhancement | CRM | Pending |
 | 5 | Leads List Page Customization | CRM | Pending |
 | 6 | Manual Item Entry in Sales Docs | Sales | Pending |
@@ -98,6 +99,42 @@ The ERPNext instance is hosted at: `https://revive.m.frappe.cloud`
 - `revive/revive/public/js/quotation.js` — client script for auto-template loading
 
 > **Next step:** Awaiting project type list and capacity details from client.
+
+---
+
+## Milestone 3A — Project & Task Row-Level Permissions (Custom Development)
+
+**Goal:** Restrict access to individual Project and Task documents so that only explicitly listed users (or User Group members) can see them. An empty list means the document is locked to System Manager / Administrator only.
+
+### Design Decisions
+- Tasks are **independent** — no fallback to parent Project's allowed_users
+- Empty `allowed_users` = **locked** (only System Manager, Projects Manager, Administrator bypass)
+- Document **owner** always passes (can see their own doc regardless)
+- User Group support: adding a group grants access to all its members
+
+### New Files
+- `revive/revive/doctype/revive_access_member/` — shared child DocType (used by both Project and Task)
+  - `revive_access_member.json` — `istable: 1`, fields: `user` (Link→User), `user_group` (Link→User Group)
+  - `revive_access_member.py` — validates exactly one of user/user_group per row
+- `revive/revive/permissions/project_permissions.py` — `get_permission_query_conditions` + `has_permission` for Project
+- `revive/revive/permissions/task_permissions.py` — `get_permission_query_conditions` + `has_permission` for Task
+- `revive/fixtures/custom_field.json` — adds `allowed_users` (Table MultiSelect → Revive Access Member) to Project and Task
+
+### Modified Files
+- `revive/hooks.py` — `fixtures`, `permission_query_conditions`, `has_permission` registered
+
+### Deploy Steps
+1. `bench migrate` — creates `tabRevive Access Member` SQL table + installs Custom Fields
+2. Verify `Allowed Users` field appears on Project and Task forms
+3. Test access control end-to-end (see Verification section)
+4. `bench export-fixtures --app revive` — normalizes `custom_field.json`
+
+### Verification
+- Non-admin with empty `allowed_users` → cannot see the Project/Task
+- Non-admin listed directly → can see it
+- Non-admin in a listed User Group → can see it
+- Document owner → always sees their own document
+- System Manager / Projects Manager → see all documents
 
 ---
 

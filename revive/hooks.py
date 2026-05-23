@@ -117,13 +117,25 @@ app_license = "mit"
 # -----------
 # Permissions evaluated in scripted ways
 
-# permission_query_conditions = {
-# 	"Event": "frappe.desk.doctype.event.event.get_permission_query_conditions",
-# }
-#
-# has_permission = {
-# 	"Event": "frappe.desk.doctype.event.event.has_permission",
-# }
+fixtures = [
+	{
+		"doctype": "Custom Field",
+		"filters": [
+			["dt", "in", ["Project", "Task"]],
+			["fieldname", "=", "allowed_users"],
+		],
+	}
+]
+
+permission_query_conditions = {
+	"Project": "revive.revive.permissions.project_permissions.get_permission_query_conditions",
+	"Task": "revive.revive.permissions.task_permissions.get_permission_query_conditions",
+}
+
+has_permission = {
+	"Project": "revive.revive.permissions.project_permissions.has_permission",
+	"Task": "revive.revive.permissions.task_permissions.has_permission",
+}
 
 # DocType Class
 # ---------------

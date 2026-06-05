@@ -56,7 +56,8 @@
    "fieldname": "post_url",
    "fieldtype": "Data",
    "label": "Post URL",
-   "options": "URL"
+   "options": "URL",
+   "reqd": 1
   },
   {
    "fieldname": "section_break_details",
@@ -162,7 +163,7 @@
   }
  ],
  "links": [],
- "modified": "2026-06-05 16:15:09.801712",
+ "modified": "2026-06-05 16:17:53.315769",
  "modified_by": "Administrator",
  "module": "Revive",
  "name": "Social Media Post Cycle",

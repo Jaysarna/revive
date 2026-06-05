@@ -177,7 +177,7 @@ def _get_users_with_role(role):
 
 
 def _doc_url(name):
-	return f"{frappe.utils.get_url()}/app/social-media-post-cycle/{frappe.utils.scrub(name)}"
+	return f"{frappe.utils.get_url()}/app/social-media-post-cycle/{name}"
 
 
 def _desk_notify(users, message):

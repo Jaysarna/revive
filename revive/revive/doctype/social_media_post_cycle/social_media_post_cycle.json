@@ -1,0 +1,216 @@
+{
+ "actions": [],
+ "creation": "2026-06-05 00:00:00",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "post_title",
+  "workflow_state",
+  "column_break_pris",
+  "platform",
+  "post_url",
+  "section_break_details",
+  "post_content",
+  "col_break_1",
+  "posted_at",
+  "digital_marketing_manager",
+  "section_break_engagement",
+  "engagement_acknowledged_at",
+  "column_break_hacc",
+  "acknowledged_by",
+  "section_break_analytics",
+  "one_hour_alert_sent",
+  "one_hour_alert_sent_at",
+  "col_break_2",
+  "twenty_four_hour_alert_sent",
+  "twenty_four_hour_alert_sent_at",
+  "section_break_reports",
+  "one_hour_report",
+  "twenty_four_hour_report"
+ ],
+ "fields": [
+  {
+   "fieldname": "workflow_state",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "Workflow State",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "post_title",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Post Title",
+   "reqd": 1
+  },
+  {
+   "fieldname": "platform",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Platform",
+   "options": "LinkedIn\nInstagram\nTwitter\nFacebook"
+  },
+  {
+   "fieldname": "post_url",
+   "fieldtype": "Data",
+   "label": "Post URL",
+   "options": "URL"
+  },
+  {
+   "fieldname": "section_break_details",
+   "fieldtype": "Section Break",
+   "label": "Post Details"
+  },
+  {
+   "fieldname": "post_content",
+   "fieldtype": "Long Text",
+   "label": "Post Content"
+  },
+  {
+   "fieldname": "digital_marketing_manager",
+   "fieldtype": "Link",
+   "label": "Digital Marketing Manager",
+   "options": "User"
+  },
+  {
+   "fieldname": "col_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "posted_at",
+   "fieldtype": "Datetime",
+   "label": "Posted At",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_engagement",
+   "fieldtype": "Section Break",
+   "label": "Engagement Tracking"
+  },
+  {
+   "fieldname": "engagement_acknowledged_at",
+   "fieldtype": "Datetime",
+   "label": "Engagement Acknowledged At",
+   "read_only": 1
+  },
+  {
+   "fieldname": "acknowledged_by",
+   "fieldtype": "Link",
+   "label": "Acknowledged By",
+   "options": "User",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_analytics",
+   "fieldtype": "Section Break",
+   "label": "Analytics Monitoring"
+  },
+  {
+   "default": "0",
+   "fieldname": "one_hour_alert_sent",
+   "fieldtype": "Check",
+   "label": "1 Hour Alert Sent",
+   "read_only": 1
+  },
+  {
+   "fieldname": "one_hour_alert_sent_at",
+   "fieldtype": "Datetime",
+   "label": "1 Hour Alert Sent At",
+   "read_only": 1
+  },
+  {
+   "fieldname": "col_break_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "twenty_four_hour_alert_sent",
+   "fieldtype": "Check",
+   "label": "24 Hour Alert Sent",
+   "read_only": 1
+  },
+  {
+   "fieldname": "twenty_four_hour_alert_sent_at",
+   "fieldtype": "Datetime",
+   "label": "24 Hour Alert Sent At",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_reports",
+   "fieldtype": "Section Break",
+   "label": "Performance Reports"
+  },
+  {
+   "fieldname": "one_hour_report",
+   "fieldtype": "Long Text",
+   "label": "1 Hour Performance Report"
+  },
+  {
+   "fieldname": "twenty_four_hour_report",
+   "fieldtype": "Long Text",
+   "label": "24 Hour Performance Report"
+  },
+  {
+   "fieldname": "column_break_pris",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_hacc",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "links": [],
+ "modified": "2026-06-05 16:15:09.801712",
+ "modified_by": "Administrator",
+ "module": "Revive",
+ "name": "Social Media Post Cycle",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Digital Marketing Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "Founder",
+   "write": 1
+  },
+  {
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Intern",
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "post_title",
+ "track_changes": 1
+}

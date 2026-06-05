@@ -1,0 +1,23 @@
+[
+	{
+		"doctype": "Role",
+		"name": "Digital Marketing Manager",
+		"role_name": "Digital Marketing Manager",
+		"desk_access": 1,
+		"disabled": 0
+	},
+	{
+		"doctype": "Role",
+		"name": "Founder",
+		"role_name": "Founder",
+		"desk_access": 1,
+		"disabled": 0
+	},
+	{
+		"doctype": "Role",
+		"name": "Intern",
+		"role_name": "Intern",
+		"desk_access": 1,
+		"disabled": 0
+	}
+]

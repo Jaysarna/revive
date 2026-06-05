@@ -124,8 +124,35 @@ fixtures = [
 			["dt", "in", ["Project", "Task"]],
 			["fieldname", "=", "allowed_users"],
 		],
-	}
+	},
+	{
+		"doctype": "Role",
+		"filters": [
+			["role_name", "in", ["Digital Marketing Manager", "Founder", "Intern"]],
+		],
+	},
+	{
+		"doctype": "Workflow",
+		"filters": [
+			["document_type", "=", "Social Media Post Cycle"],
+		],
+	},
+	{
+		"doctype": "Notification",
+		"filters": [
+			["document_type", "=", "Social Media Post Cycle"],
+		],
+	},
 ]
+
+# Scheduled Tasks
+# ---------------
+
+scheduler_events = {
+	"hourly": [
+		"revive.revive.doctype.social_media_post_cycle.social_media_post_cycle.send_analytics_reminders",
+	],
+}
 
 permission_query_conditions = {
 	"Project": "revive.revive.permissions.project_permissions.get_permission_query_conditions",

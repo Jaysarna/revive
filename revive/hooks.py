@@ -121,8 +121,7 @@ fixtures = [
 	{
 		"doctype": "Custom Field",
 		"filters": [
-			["dt", "in", ["Project", "Task"]],
-			["fieldname", "=", "allowed_users"],
+			["dt", "in", ["Project", "Task","Quotation"]],
 		],
 	},
 	{

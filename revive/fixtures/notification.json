@@ -1,90 +1,174 @@
 [
-	{
-		"channel": "Email",
-		"creation": "2026-06-05 00:00:00.000000",
-		"doctype": "Notification",
-		"document_type": "Social Media Post Cycle",
-		"enabled": 1,
-		"event": "Workflow State",
-		"modified": "2026-06-05 00:00:00.000000",
-		"modified_by": "Administrator",
-		"name": "SMPC - Post Completed - Notify Founder",
-		"owner": "Administrator",
-		"send_to_all_assignees": 0,
-		"subject": "Action Required: Like & Share — {{ doc.post_title }}",
-		"message": "<p>Hi,</p>\n<p>The Digital Marketing Manager has completed a social media post.</p>\n<table>\n  <tr><td><b>Post Title</b></td><td>{{ doc.post_title }}</td></tr>\n  <tr><td><b>Platform</b></td><td>{{ doc.platform or '—' }}</td></tr>\n  <tr><td><b>Post URL</b></td><td>{{ doc.post_url or '—' }}</td></tr>\n</table>\n<p>Please <b>Like and Share</b> this post on LinkedIn, then open the record and click <b>Acknowledge Share</b>.</p>\n<p><a href=\"{{ frappe.utils.get_url() }}/app/social-media-post-cycle/{{ doc.name }}\">Open Record</a></p>",
-		"recipients": [
-			{
-				"doctype": "Notification Recipient",
-				"receiver_by_role": "Founder"
-			}
-		],
-		"workflow_state": "Post Completed"
-	},
-	{
-		"channel": "Email",
-		"creation": "2026-06-05 00:00:00.000000",
-		"doctype": "Notification",
-		"document_type": "Social Media Post Cycle",
-		"enabled": 1,
-		"event": "Workflow State",
-		"modified": "2026-06-05 00:00:00.000000",
-		"modified_by": "Administrator",
-		"name": "SMPC - Engagement Acknowledged - Notify Interns",
-		"owner": "Administrator",
-		"send_to_all_assignees": 0,
-		"subject": "Begin Analytics Monitoring — {{ doc.post_title }}",
-		"message": "<p>Hi,</p>\n<p>The team has liked and shared the post. Your monitoring window is now open.</p>\n<table>\n  <tr><td><b>Post Title</b></td><td>{{ doc.post_title }}</td></tr>\n  <tr><td><b>Platform</b></td><td>{{ doc.platform or '—' }}</td></tr>\n  <tr><td><b>Acknowledged By</b></td><td>{{ doc.acknowledged_by or '—' }}</td></tr>\n</table>\n<p>You will receive automated reminders at <b>1 hour</b> and <b>24 hours</b> to submit your analytics report.</p>\n<p><a href=\"{{ frappe.utils.get_url() }}/app/social-media-post-cycle/{{ doc.name }}\">Open Record</a></p>",
-		"recipients": [
-			{
-				"doctype": "Notification Recipient",
-				"receiver_by_role": "Intern"
-			}
-		],
-		"workflow_state": "Engagement Acknowledged"
-	},
-	{
-		"channel": "System Notification",
-		"creation": "2026-06-05 00:00:00.000000",
-		"doctype": "Notification",
-		"document_type": "Social Media Post Cycle",
-		"enabled": 1,
-		"event": "Workflow State",
-		"modified": "2026-06-05 00:00:00.000000",
-		"modified_by": "Administrator",
-		"name": "SMPC - Post Completed - Desk Alert Founder",
-		"owner": "Administrator",
-		"send_to_all_assignees": 0,
-		"subject": "Please Like & Share: {{ doc.post_title }}",
-		"message": "The Digital Marketing Manager has published {{ doc.post_title }} on {{ doc.platform }}. Please Like and Share it on LinkedIn, then click Acknowledge Share.",
-		"recipients": [
-			{
-				"doctype": "Notification Recipient",
-				"receiver_by_role": "Founder"
-			}
-		],
-		"workflow_state": "Post Completed"
-	},
-	{
-		"channel": "System Notification",
-		"creation": "2026-06-05 00:00:00.000000",
-		"doctype": "Notification",
-		"document_type": "Social Media Post Cycle",
-		"enabled": 1,
-		"event": "Workflow State",
-		"modified": "2026-06-05 00:00:00.000000",
-		"modified_by": "Administrator",
-		"name": "SMPC - Engagement Acknowledged - Desk Alert Interns",
-		"owner": "Administrator",
-		"send_to_all_assignees": 0,
-		"subject": "Monitoring Started: {{ doc.post_title }}",
-		"message": "Engagement for {{ doc.post_title }} has been acknowledged. Your 1-hour and 24-hour analytics reports are now due. Start monitoring and record your findings.",
-		"recipients": [
-			{
-				"doctype": "Notification Recipient",
-				"receiver_by_role": "Intern"
-			}
-		],
-		"workflow_state": "Engagement Acknowledged"
-	}
+ {
+  "attach_files": null,
+  "attach_print": 0,
+  "channel": "Email",
+  "condition": null,
+  "date_changed": null,
+  "days_in_advance": 0,
+  "docstatus": 0,
+  "doctype": "Notification",
+  "document_type": "Social Media Post Cycle",
+  "enabled": 1,
+  "event": "Workflow State",
+  "from_attach_field": null,
+  "is_standard": 0,
+  "message": "<p>Hi,</p>\n<p>The Digital Marketing Manager has completed a social media post.</p>\n<table>\n  <tr><td><b>Post Title</b></td><td>{{ doc.post_title }}</td></tr>\n  <tr><td><b>Platform</b></td><td>{{ doc.platform or '—' }}</td></tr>\n  <tr><td><b>Post URL</b></td><td>{{ doc.post_url or '—' }}</td></tr>\n</table>\n<p>Please <b>Like and Share</b> this post on LinkedIn, then open the record and click <b>Acknowledge Share</b>.</p>\n<p><a href=\"{{ frappe.utils.get_url() }}/app/social-media-post-cycle/{{ doc.name }}\">Open Record</a></p>",
+  "message_type": null,
+  "method": null,
+  "modified": "2026-06-05 00:00:00",
+  "module": null,
+  "name": "SMPC - Post Completed - Notify Founder",
+  "print_format": null,
+  "property_value": null,
+  "recipients": [
+   {
+    "bcc": null,
+    "cc": null,
+    "condition": null,
+    "parent": "SMPC - Post Completed - Notify Founder",
+    "parentfield": "recipients",
+    "parenttype": "Notification",
+    "receiver_by_document_field": null,
+    "receiver_by_role": "Founder"
+   }
+  ],
+  "send_system_notification": 0,
+  "send_to_all_assignees": 0,
+  "sender": null,
+  "sender_email": null,
+  "set_property_after_alert": null,
+  "slack_webhook_url": null,
+  "subject": "Action Required: Like & Share — {{ doc.post_title }}",
+  "value_changed": null
+ },
+ {
+  "attach_files": null,
+  "attach_print": 0,
+  "channel": "System Notification",
+  "condition": null,
+  "date_changed": null,
+  "days_in_advance": 0,
+  "docstatus": 0,
+  "doctype": "Notification",
+  "document_type": "Social Media Post Cycle",
+  "enabled": 1,
+  "event": "Save",
+  "from_attach_field": null,
+  "is_standard": 0,
+  "message": "The Digital Marketing Manager has published {{ doc.post_title }} on {{ doc.platform }}. Please Like and Share it on LinkedIn, then click Acknowledge Share.",
+  "message_type": null,
+  "method": null,
+  "modified": "2026-06-08 16:17:38.033376",
+  "module": null,
+  "name": "SMPC - Post Completed - Desk Alert Founder",
+  "print_format": null,
+  "property_value": null,
+  "recipients": [
+   {
+    "bcc": null,
+    "cc": null,
+    "condition": null,
+    "parent": "SMPC - Post Completed - Desk Alert Founder",
+    "parentfield": "recipients",
+    "parenttype": "Notification",
+    "receiver_by_document_field": null,
+    "receiver_by_role": "All"
+   }
+  ],
+  "send_system_notification": 0,
+  "send_to_all_assignees": 0,
+  "sender": null,
+  "sender_email": null,
+  "set_property_after_alert": null,
+  "slack_webhook_url": null,
+  "subject": "Please Like & Share: {{ doc.post_title }}",
+  "value_changed": null
+ },
+ {
+  "attach_files": null,
+  "attach_print": 0,
+  "channel": "Email",
+  "condition": "doc.workflow_status == \"Post Completed\"",
+  "date_changed": null,
+  "days_in_advance": 0,
+  "docstatus": 0,
+  "doctype": "Notification",
+  "document_type": "Social Media Post Cycle",
+  "enabled": 1,
+  "event": "Save",
+  "from_attach_field": null,
+  "is_standard": 0,
+  "message": "<p>Hi,</p>\n<p>The team has liked and shared the post. Your monitoring window is now open.</p>\n<table>\n  <tr><td><b>Post Title</b></td><td>{{ doc.post_title }}</td></tr>\n  <tr><td><b>Platform</b></td><td>{{ doc.platform or '—' }}</td></tr>\n  <tr><td><b>Acknowledged By</b></td><td>{{ doc.acknowledged_by or '—' }}</td></tr>\n</table>\n<p>You will receive automated reminders at <b>1 hour</b> and <b>24 hours</b> to submit your analytics report.</p>\n<p><a href=\"{{ frappe.utils.get_url() }}/app/social-media-post-cycle/{{ doc.name }}\">Open Record</a></p>",
+  "message_type": null,
+  "method": null,
+  "modified": "2026-06-08 16:30:34.507246",
+  "module": null,
+  "name": "SMPC - Engagement Acknowledged - Notify Interns",
+  "print_format": null,
+  "property_value": null,
+  "recipients": [
+   {
+    "bcc": null,
+    "cc": null,
+    "condition": null,
+    "parent": "SMPC - Engagement Acknowledged - Notify Interns",
+    "parentfield": "recipients",
+    "parenttype": "Notification",
+    "receiver_by_document_field": null,
+    "receiver_by_role": "DM Intern"
+   }
+  ],
+  "send_system_notification": 0,
+  "send_to_all_assignees": 0,
+  "sender": null,
+  "sender_email": null,
+  "set_property_after_alert": null,
+  "slack_webhook_url": null,
+  "subject": "Begin Analytics Monitoring — {{ doc.post_title }}",
+  "value_changed": null
+ },
+ {
+  "attach_files": null,
+  "attach_print": 0,
+  "channel": "System Notification",
+  "condition": null,
+  "date_changed": null,
+  "days_in_advance": 0,
+  "docstatus": 0,
+  "doctype": "Notification",
+  "document_type": "Social Media Post Cycle",
+  "enabled": 1,
+  "event": "Workflow State",
+  "from_attach_field": null,
+  "is_standard": 0,
+  "message": "Engagement for {{ doc.post_title }} has been acknowledged. Your 1-hour and 24-hour analytics reports are now due. Start monitoring and record your findings.",
+  "message_type": null,
+  "method": null,
+  "modified": "2026-06-05 00:00:00",
+  "module": null,
+  "name": "SMPC - Engagement Acknowledged - Desk Alert Interns",
+  "print_format": null,
+  "property_value": null,
+  "recipients": [
+   {
+    "bcc": null,
+    "cc": null,
+    "condition": null,
+    "parent": "SMPC - Engagement Acknowledged - Desk Alert Interns",
+    "parentfield": "recipients",
+    "parenttype": "Notification",
+    "receiver_by_document_field": null,
+    "receiver_by_role": "Intern"
+   }
+  ],
+  "send_system_notification": 0,
+  "send_to_all_assignees": 0,
+  "sender": null,
+  "sender_email": null,
+  "set_property_after_alert": null,
+  "slack_webhook_url": null,
+  "subject": "Monitoring Started: {{ doc.post_title }}",
+  "value_changed": null
+ }
 ]

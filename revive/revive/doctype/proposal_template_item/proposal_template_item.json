@@ -1,0 +1,183 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:title",
+ "creation": "2026-06-17 12:25:58.285027",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_eubv",
+  "amended_from",
+  "title",
+  "template_section",
+  "mounting_type",
+  "column_break_vryg",
+  "capacity",
+  "proposal_table",
+  "disable",
+  "section_break_cmab",
+  "description",
+  "section_break_lqmq",
+  "scope_of_work",
+  "section_break_qbqv",
+  "bill_of_material",
+  "section_break_wlqc",
+  "power_generation_table",
+  "section_break_fvxq",
+  "geda_item",
+  "section_break_lmpt",
+  "warranty"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_eubv",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Proposal Template Item",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Title",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "column_break_vryg",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "capacity",
+   "fieldtype": "Float",
+   "label": "Capacity"
+  },
+  {
+   "default": "0",
+   "fieldname": "disable",
+   "fieldtype": "Check",
+   "label": "Disable"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "section_break_cmab",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Text Editor",
+   "label": "Description"
+  },
+  {
+   "fieldname": "proposal_table",
+   "fieldtype": "Select",
+   "label": "Proposal Table",
+   "options": "\nClearance and Approvals\nSite Preparation Activities\nDC Side\nAC Side\nMiscellaneous\nBill Of Material (Major Parts)\nPower Generation\nGEDA & DISCOM Charges\nWarranty"
+  },
+  {
+   "fieldname": "template_section",
+   "fieldtype": "Select",
+   "label": "Template Section",
+   "options": "\nAbout\nIntroduction\nTechnical\nTerms\nSubject"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "section_break_lqmq",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "scope_of_work",
+   "fieldtype": "Table",
+   "label": "Scope Of Work",
+   "options": "Scope of Work"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "section_break_fvxq",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "geda_item",
+   "fieldtype": "Table",
+   "label": "Geda Item",
+   "options": "GEDA Charges Item"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "section_break_lmpt",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "warranty",
+   "fieldtype": "Table",
+   "label": "Warranty",
+   "options": "Warranty Detail"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "section_break_qbqv",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "bill_of_material",
+   "fieldtype": "Table",
+   "label": "Bill Of Material",
+   "options": "Bill Of Material"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "section_break_wlqc",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "power_generation_table",
+   "fieldtype": "Table",
+   "label": "Power Generation table",
+   "options": "Power Generation Table"
+  },
+  {
+   "fieldname": "mounting_type",
+   "fieldtype": "Select",
+   "label": "Mounting Type",
+   "options": "\nRCC Roof\nMetal Sheet Roof\nStanding Seam Roof\nGround Fixed Tilt\nSingle Axis Tracker\nDual Axis Tracker\nFloating\nCarport\nCanal Top\nCanal Bank\nFa\u00e7ade BIPV\nRoof BIPV"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2026-07-22 00:15:25.300017",
+ "modified_by": "Administrator",
+ "module": "Revive",
+ "name": "Proposal Template Item",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

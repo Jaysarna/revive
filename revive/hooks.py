@@ -163,6 +163,12 @@ has_permission = {
 	"Task": "revive.revive.permissions.task_permissions.has_permission",
 }
 
+doc_events = {
+	"Task": {
+		"on_update": "revive.revive.events.task_events.sync_allowed_users_assignment",
+	},
+}
+
 # DocType Class
 # ---------------
 # Override standard doctype classes
@@ -173,15 +179,7 @@ has_permission = {
 
 # Document Events
 # ---------------
-# Hook on document methods and events
-
-# doc_events = {
-# 	"*": {
-# 		"on_update": "method",
-# 		"on_cancel": "method",
-# 		"on_trash": "method"
-# 	}
-# }
+# Hook on document methods and events (see doc_events above)
 
 # Scheduled Tasks
 # ---------------
